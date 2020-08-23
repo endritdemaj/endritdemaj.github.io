@@ -5,11 +5,11 @@
   "title": "Powered by MDX",
   "description": "You can write JSX and use React components within your Markdown thanks to MDX.",
   "source": "@site/docs/mdx.md",
-  "permalink": "/docs/mdx",
+  "permalink": "/endritdemaj.github.io/docs/mdx",
   "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/mdx.md",
   "sidebar": "someSidebar",
   "previous": {
     "title": "Docker Cheatsheat",
-    "permalink": "/docs/documentation/dockercheatsheet"
+    "permalink": "/endritdemaj.github.io/docs/documentation/dockercheatsheet"
   }
 }

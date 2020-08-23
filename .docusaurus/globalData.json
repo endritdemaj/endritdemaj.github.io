@@ -1,37 +1,37 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/docs",
+      "path": "/endritdemaj.github.io/docs",
       "latestVersionName": null,
       "versions": [
         {
           "name": null,
-          "path": "/docs",
+          "path": "/endritdemaj.github.io/docs",
           "mainDocId": "doc1",
           "docs": [
             {
               "id": "doc1",
-              "path": "/docs/"
+              "path": "/endritdemaj.github.io/docs/"
             },
             {
               "id": "doc2",
-              "path": "/docs/doc2"
+              "path": "/endritdemaj.github.io/docs/doc2"
             },
             {
               "id": "doc3",
-              "path": "/docs/doc3"
+              "path": "/endritdemaj.github.io/docs/doc3"
             },
             {
               "id": "documentation/dockercheatsheet",
-              "path": "/docs/documentation/dockercheatsheet"
+              "path": "/endritdemaj.github.io/docs/documentation/dockercheatsheet"
             },
             {
               "id": "documentation/linuxcheatsheet",
-              "path": "/docs/documentation/linuxcheatsheet"
+              "path": "/endritdemaj.github.io/docs/documentation/linuxcheatsheet"
             },
             {
               "id": "mdx",
-              "path": "/docs/mdx"
+              "path": "/endritdemaj.github.io/docs/mdx"
             }
           ]
         }

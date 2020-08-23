@@ -5,16 +5,16 @@
   "title": "Docker Cheatsheat",
   "description": "You can write content using GitHub-flavored Markdown syntax.",
   "source": "@site/docs/documentation/dockercheatsheet.md",
-  "permalink": "/docs/documentation/dockercheatsheet",
+  "permalink": "/endritdemaj.github.io/docs/documentation/dockercheatsheet",
   "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/documentation/dockercheatsheet.md",
   "sidebar_label": "Docker Cheatsheat",
   "sidebar": "someSidebar",
   "previous": {
     "title": "Linux Cheatsheat",
-    "permalink": "/docs/documentation/linuxcheatsheet"
+    "permalink": "/endritdemaj.github.io/docs/documentation/linuxcheatsheet"
   },
   "next": {
     "title": "Powered by MDX",
-    "permalink": "/docs/mdx"
+    "permalink": "/endritdemaj.github.io/docs/mdx"
   }
 }
