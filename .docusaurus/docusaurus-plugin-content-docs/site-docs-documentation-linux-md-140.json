@@ -1,0 +1,20 @@
+{
+  "unversionedId": "documentation/linuxcheatsheet",
+  "id": "documentation/linuxcheatsheet",
+  "isDocsHomePage": false,
+  "title": "Linux Cheatsheat",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/documentation/linux.md",
+  "permalink": "/docs/documentation/linuxcheatsheet",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/documentation/linux.md",
+  "sidebar_label": "Linux Cheatsheat",
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "This is Document Number 3",
+    "permalink": "/docs/doc3"
+  },
+  "next": {
+    "title": "Docker Cheatsheat",
+    "permalink": "/docs/documentation/dockercheatsheet"
+  }
+}

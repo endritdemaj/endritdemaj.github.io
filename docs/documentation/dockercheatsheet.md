@@ -48,6 +48,7 @@ what is happening in 'docker container run'
 
 ## Networking
 bridge(docker0) is the default network that routes to the Host Network Interface
+
     docker network ls									#List all docker networks
     docker network inspect								#inspect what we are doing
     docker network create --driver						#create a new network
