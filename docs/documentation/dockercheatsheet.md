@@ -147,11 +147,14 @@ If we inspect our network, we can see this:
         }
     ]
 
-If we want to connect an existing container to a network we have to run the following
+If we want to connect an existing container to a network we have to run the following  
     
     docker network connect <containerid> <networkid>
 
+### Docker Networks: DNS
 
+In the world where containers changes from second  to second we cant rely on IPAddresses. Since its to dynamic
+There is a build in solution for this and that is __DNS-Naming__
 
-    
+    docker container run -d --name my_container_name 
     
