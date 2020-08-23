@@ -59,7 +59,7 @@ export default [
 },
 {
   path: '/endritdemaj.github.io/docs',
-  component: ComponentCreator('/endritdemaj.github.io/docs','8f3'),
+  component: ComponentCreator('/endritdemaj.github.io/docs','9a4'),
   
   routes: [
 {
@@ -85,6 +85,11 @@ export default [
 {
   path: '/endritdemaj.github.io/docs/documentation/linuxcheatsheet',
   component: ComponentCreator('/endritdemaj.github.io/docs/documentation/linuxcheatsheet','e99'),
+  exact: true,
+},
+{
+  path: '/endritdemaj.github.io/docs/documentation/tivolicheatsheet',
+  component: ComponentCreator('/endritdemaj.github.io/docs/documentation/tivolicheatsheet','0a1'),
   exact: true,
 },
 {

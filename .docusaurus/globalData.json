@@ -30,6 +30,10 @@
               "path": "/endritdemaj.github.io/docs/documentation/linuxcheatsheet"
             },
             {
+              "id": "documentation/tivolicheatsheet",
+              "path": "/endritdemaj.github.io/docs/documentation/tivolicheatsheet"
+            },
+            {
               "id": "mdx",
               "path": "/endritdemaj.github.io/docs/mdx"
             }
