@@ -82,7 +82,7 @@
     "component": "component---theme-blog-post-pageccc-cab",
     "content": "content---endritdemaj-github-io-blog-welcome-286-7e3"
   },
-  "/endritdemaj.github.io/docs-9a4": {
+  "/endritdemaj.github.io/docs-0bc": {
     "component": "component---theme-doc-page-1-be-9be",
     "docsMetadata": "docsMetadata---endritdemaj-github-io-docs-2-f-6-c71"
   },
@@ -105,6 +105,10 @@
   "/endritdemaj.github.io/docs/documentation/linuxcheatsheet-e99": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---endritdemaj-github-io-docs-documentation-linuxcheatsheet-140-711"
+  },
+  "/endritdemaj.github.io/docs/documentation/systemdcheatsheet-bc1": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---endritdemaj-github-io-docs-documentation-systemd-487-460"
   },
   "/endritdemaj.github.io/docs/documentation/tivolicheatsheet-0a1": {
     "component": "component---theme-doc-item-178-a40",

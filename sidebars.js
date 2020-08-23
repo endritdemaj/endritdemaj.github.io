@@ -1,7 +1,8 @@
 module.exports = {
   someSidebar: {
     Docusaurus: ['doc1', 'doc2', 'doc3'],
-    Documentation:['documentation/linuxcheatsheet','documentation/dockercheatsheet','documentation/tivolicheatsheet'],
+    Documentation:['documentation/linuxcheatsheet','documentation/dockercheatsheet',
+                    'documentation/tivolicheatsheet', 'documentation/systemdcheatsheet'],
     Features: ['mdx'],
   },
 };

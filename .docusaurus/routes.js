@@ -59,7 +59,7 @@ export default [
 },
 {
   path: '/endritdemaj.github.io/docs',
-  component: ComponentCreator('/endritdemaj.github.io/docs','9a4'),
+  component: ComponentCreator('/endritdemaj.github.io/docs','0bc'),
   
   routes: [
 {
@@ -85,6 +85,11 @@ export default [
 {
   path: '/endritdemaj.github.io/docs/documentation/linuxcheatsheet',
   component: ComponentCreator('/endritdemaj.github.io/docs/documentation/linuxcheatsheet','e99'),
+  exact: true,
+},
+{
+  path: '/endritdemaj.github.io/docs/documentation/systemdcheatsheet',
+  component: ComponentCreator('/endritdemaj.github.io/docs/documentation/systemdcheatsheet','bc1'),
   exact: true,
 },
 {

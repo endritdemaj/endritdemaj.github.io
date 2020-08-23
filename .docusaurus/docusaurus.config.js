@@ -1,5 +1,5 @@
 export default {
-  "title": "My Site",
+  "title": "Endrit Demaj",
   "tagline": "The tagline of my site",
   "url": "https://endritdemaj.github.io",
   "baseUrl": "/endritdemaj.github.io/",
@@ -9,7 +9,7 @@ export default {
   "projectName": "endritdemaj.github.io",
   "themeConfig": {
     "navbar": {
-      "title": "My Site",
+      "title": "Endrit Demaj",
       "logo": {
         "alt": "My Site Logo",
         "src": "img/logo.svg"

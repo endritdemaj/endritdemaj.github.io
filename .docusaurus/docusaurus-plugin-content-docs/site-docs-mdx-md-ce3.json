@@ -9,7 +9,7 @@
   "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/mdx.md",
   "sidebar": "someSidebar",
   "previous": {
-    "title": "IBM Tivoli Storage Manager (TSM) Cheatsheat",
-    "permalink": "/endritdemaj.github.io/docs/documentation/tivolicheatsheet"
+    "title": "Systemd Cheatsheat",
+    "permalink": "/endritdemaj.github.io/docs/documentation/systemdcheatsheet"
   }
 }

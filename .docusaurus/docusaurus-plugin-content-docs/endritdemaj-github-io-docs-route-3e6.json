@@ -42,6 +42,11 @@
             "type": "link",
             "label": "IBM Tivoli Storage Manager",
             "href": "/endritdemaj.github.io/docs/documentation/tivolicheatsheet"
+          },
+          {
+            "type": "link",
+            "label": "Systemd Cheatsheat",
+            "href": "/endritdemaj.github.io/docs/documentation/systemdcheatsheet"
           }
         ]
       },
@@ -65,6 +70,7 @@
     "/endritdemaj.github.io/docs/doc3": "someSidebar",
     "/endritdemaj.github.io/docs/documentation/dockercheatsheet": "someSidebar",
     "/endritdemaj.github.io/docs/documentation/linuxcheatsheet": "someSidebar",
+    "/endritdemaj.github.io/docs/documentation/systemdcheatsheet": "someSidebar",
     "/endritdemaj.github.io/docs/documentation/tivolicheatsheet": "someSidebar",
     "/endritdemaj.github.io/docs/mdx": "someSidebar"
   },
