@@ -4,8 +4,6 @@ title: Linux Cheatsheat
 sidebar_label: Linux Cheatsheat
 ---
 
-You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
-
 ## Markdown Syntax
 
 
