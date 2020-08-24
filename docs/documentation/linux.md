@@ -4,10 +4,6 @@ title: Linux Cheatsheat
 sidebar_label: Linux Cheatsheat
 ---
 
-## Markdown Syntax
-
-
-
     pwd                                                             #print working directory   
     history                                                         #show last run commands
     history_persistant                                              #show persistant history with timestamp
