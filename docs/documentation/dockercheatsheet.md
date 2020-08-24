@@ -156,5 +156,140 @@ If we want to connect an existing container to a network we have to run the foll
 In the world where containers changes from second  to second we cant rely on IPAddresses. Since its to dynamic
 There is a build in solution for this and that is __DNS-Naming__
 
+#### TL;DL
+
+    docker container run -d --name my_container_name                                                    #run a container with a dns-name my_container_name
+    docker run -d --network-alias search --rm --name elastic_3 --network my_app_network elasticsearch:2 #run container in network my_app_network with the network alias 'search'
     docker container run -d --name my_container_name 
     
+Since we cant have a container with a same name, docker brings up DNS-resolving with it. With the Option `--net-alias` or `--network-alias`  
+The following commands will fire up two elasticsearch containers with the network-name `search` and different container names on the docker network `my_app_network`
+
+    docker run -d --network-alias search --rm --name elastic_3 --network my_app_network elasticsearch:2
+    docker run -d --network-alias search --rm --name elastic_4 --network my_app_network elasticsearch:2
+
+If we have a look and curl now the default elasticsearch port `9200` we can check that the DNS-Round-Robin works
+
+    $docker container run --rm -ti --network my_app_network centos curl -s search:9200
+    {
+      "name" : "Turner D. Century",
+      "cluster_name" : "elasticsearch",
+      "cluster_uuid" : "BsfpId_oSC6JBdP7EvdJiQ",
+      "version" : {
+        "number" : "2.4.6",
+        "build_hash" : "5376dca9f70f3abef96a77f4bb22720ace8240fd",
+        "build_timestamp" : "2017-07-18T12:17:44Z",
+        "build_snapshot" : false,
+        "lucene_version" : "5.5.4"
+      },
+      "tagline" : "You Know, for Search"
+    }
+    $docker container run --rm -ti --network my_app_network centos curl -s search:9200
+    {
+      "name" : "Tyga",
+      "cluster_name" : "elasticsearch",
+      "cluster_uuid" : "PN5LN99vSySvyuNX1csktg",
+      "version" : {
+        "number" : "2.4.6",
+        "build_hash" : "5376dca9f70f3abef96a77f4bb22720ace8240fd",
+        "build_timestamp" : "2017-07-18T12:17:44Z",
+        "build_snapshot" : false,
+        "lucene_version" : "5.5.4"
+      },
+      "tagline" : "You Know, for Search"
+    }
+
+
+### Docker Images
+
+- App binaries and dependencies 
+- Metadata about the image
+- Not a complete OS. No kernel, kernel modules (e.g. drivers)
+- App as apache
+
+#### TL;TD;
+
+    docker pull nginx                           #Pull latest nginx image from default repository
+    docker history nginx:latest                 #check history of the latest nginx image
+    docker pull nginx:1.11.9                    #pull specific image of nginx
+    docker image inspect nginx                  #inspect the nginx image and check its metadata
+
+    docker image tag nginx endritdemaj/nginx    #give the nginx a new TAG
+
+pull latest image of `nginx`
+
+    $docker pull nginx
+    Using default tag: latest
+    latest: Pulling from library/nginx
+    bf5952930446: Already exists 
+    cb9a6de05e5a: Pull complete 
+    9513ea0afb93: Pull complete 
+    b49ea07d2e93: Pull complete 
+    a5e4a503d449: Pull complete 
+    Digest: sha256:b0ad43f7ee5edbc0effbc14645ae7055e21bc1973aee5150745632a24a752661
+    Status: Downloaded newer image for nginx:latest
+    docker.io/library/nginx:latest
+
+pull another version of `nginx:tag`
+
+    docker pull nginx:1.11.9
+
+Check the layers of a container with `docker image history` or `docker history`
+Every image starts with a `scratch` (first layer) and every change on that image is another layer
+
+    $docker history nginx:latest
+    IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+    4bb46517cac3        10 days ago         /bin/sh -c #(nop)  CMD ["nginx" "-g" "daemon…   0B                  
+    <missing>           10 days ago         /bin/sh -c #(nop)  STOPSIGNAL SIGTERM           0B                  
+    <missing>           10 days ago         /bin/sh -c #(nop)  EXPOSE 80                    0B                  
+    <missing>           10 days ago         /bin/sh -c #(nop)  ENTRYPOINT ["/docker-entr…   0B                  
+    <missing>           10 days ago         /bin/sh -c #(nop) COPY file:0fd5fca330dcd6a7…   1.04kB              
+    <missing>           10 days ago         /bin/sh -c #(nop) COPY file:1d0a4127e78a26c1…   1.96kB              
+    <missing>           10 days ago         /bin/sh -c #(nop) COPY file:e7e183879c35719c…   1.2kB               
+    <missing>           10 days ago         /bin/sh -c set -x     && addgroup --system -…   63.4MB              
+    <missing>           10 days ago         /bin/sh -c #(nop)  ENV PKG_RELEASE=1~buster     0B                  
+    <missing>           10 days ago         /bin/sh -c #(nop)  ENV NJS_VERSION=0.4.3        0B                  
+    <missing>           10 days ago         /bin/sh -c #(nop)  ENV NGINX_VERSION=1.19.2     0B                  
+    <missing>           2 weeks ago         /bin/sh -c #(nop)  LABEL maintainer=NGINX Do…   0B                  
+    <missing>           2 weeks ago         /bin/sh -c #(nop)  CMD ["bash"]                 0B                  
+    <missing>           2 weeks ago         /bin/sh -c #(nop) ADD file:3af3091e7d2bb40bc…   69.2MB  
+
+Check an image and see its metadata with the following command to see e.g. which ports we have to open up on our host for the created container.
+Check env. variables, or nginx version, author and so on.
+
+    docker image inspect nginx
+
+To give an image a new tag we hit. If we don't specify  a TAG it defaults to latest. Latest is a default TAG and not the latest image
+
+    docker image tag nginx endritdemaj/nginx
+
+With the following command we push the new image to the default registry (docker hub)
+
+    docker image push endritdemaj/nginx
+
+See example here: 
+
+    $docker image tag nginx endritdemaj/nginx
+    $docker image ls
+    REPOSITORY                                  TAG                 IMAGE ID            CREATED             SIZE
+    endritdemaj/nginx                           latest              4bb46517cac3        10 days ago         133MB
+    nginx                                       latest              4bb46517cac3        10 days ago         133MB
+    
+    $docker image push endritdemaj/nginx
+    The push refers to repository [docker.io/endritdemaj/nginx]
+    550333325e31: Preparing 
+    22ea89b1a816: Preparing 
+    a4d893caa5c9: Preparing 
+    0338db614b95: Preparing 
+    d0f104dc0a1f: Preparing 
+    denied: requested access to the resource is denied
+
+
+I can create new Tags as we want
+
+    $docker image tag endritdemaj/nginx:latest endritdemaj/nginx:testing
+    $docker image ls
+    REPOSITORY                                  TAG                 IMAGE ID            CREATED             SIZE
+    nginx                                       latest              4bb46517cac3        10 days ago         133MB
+    endritdemaj/nginx                           latest              4bb46517cac3        10 days ago         133MB
+    endritdemaj/nginx                           testing             4bb46517cac3        10 days ago         133MB

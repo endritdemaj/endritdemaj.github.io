@@ -3,7 +3,7 @@
   "id": "documentation/linuxcheatsheet",
   "isDocsHomePage": false,
   "title": "Linux Cheatsheat",
-  "description": "Markdown Syntax",
+  "description": "pwd                                                             #print working directory",
   "source": "@site/docs/documentation/linux.md",
   "permalink": "/endritdemaj.github.io/docs/documentation/linuxcheatsheet",
   "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/documentation/linux.md",

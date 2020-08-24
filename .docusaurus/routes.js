@@ -8,6 +8,11 @@ export default [
   exact: true,
 },
 {
+  path: '/endritdemaj.github.io/__docusaurus/debug',
+  component: ComponentCreator('/endritdemaj.github.io/__docusaurus/debug','b2b'),
+  exact: true,
+},
+{
   path: '/endritdemaj.github.io/blog',
   component: ComponentCreator('/endritdemaj.github.io/blog','80d'),
   exact: true,
