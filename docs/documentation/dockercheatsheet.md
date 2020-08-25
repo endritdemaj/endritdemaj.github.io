@@ -200,7 +200,7 @@ If we have a look and curl now the default elasticsearch port `9200` we can chec
     }
 
 
-### Docker Images
+## Docker Images
 
 - App binaries and dependencies 
 - Metadata about the image
@@ -293,3 +293,103 @@ I can create new Tags as we want
     nginx                                       latest              4bb46517cac3        10 days ago         133MB
     endritdemaj/nginx                           latest              4bb46517cac3        10 days ago         133MB
     endritdemaj/nginx                           testing             4bb46517cac3        10 days ago         133MB
+
+### Dockerfile
+
+The instructions on how to build an Image are stored in a Dockerfile  
+
+Package Manager like apt and yum are one of the reasons to build container `FROM Debian, Ubuntu, Fedora or CentOS`
+
+    docker build -f some-dockerfile                         #to build from a specific dockerfile instead of the default
+
+When we build an Image, it pulls the debian:jessie image to the local Docker Host from docker hub. Then each line is going to be executed and cached layer by layer on the docker engine
+Each Command in a Dockerfile is a new Image Layer
+
+    FROM debian:jessie                                      #use always a minimum distribution
+    ENV NGINX_VERSION 1.11.10-1~jessie                      #Enironment variables which are very important for containers since all the info is there
+    RUN apt-key...                                          #runs command e.g unzipping, install something or so on.
+
+It is usual that commands get brought together with `&&` because each command is a new layer to sace space and time
+
+    RUN apt-get update \
+        && apt-get install --no-install-recommends -y \
+            ca-certificates
+
+Loggin in Docker is managed by Docker itself we have to move the logging to stdout. Everything that we want to log has to be moved there
+
+    RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+        && ln -sf /dev/stderr /var/log/nginx/error.log
+
+Exporse a port on the docker virual network. The ports are not automatically exposed on the host. Thats why we need the `--p` in `docker run`
+
+    EXPOSE 80 443
+
+This command is launched every time we start a new container or when we restart a container
+
+    CMD ["nginx", "-g", "deamon off;"]
+
+
+The following command builds all dockerfiles in the current directory where `customnginx` is the image name
+
+    docker image build -t customnginx .
+
+The hash at the line cached the changes to that line so if nothing changes til that line docker doesnt rebuild it. It is very import that the things that
+change the least are on the top of the file and at the button the stuff that changes most
+
+    $docker image build -t customnginx .
+    Sending build context to Docker daemon   16.9kB
+    Step 1/7 : FROM debian:stretch-slim
+    stretch-slim: Pulling from library/debian
+    75cb2ebf3b3c: Pull complete 
+    Digest: sha256:c4052b51588fc32fe0c25a984a34cad5dc5990b9c12744073a9c409a6d0737cf
+    Status: Downloaded newer image for debian:stretch-slim
+     ---> 8ff748cdd6b1
+    Step 2/7 : ENV NGINX_VERSION 1.13.6-1~stretch
+     ---> Running in 30c99b093c02
+    Removing intermediate container 30c99b093c02
+     ---> 03ecbd5ec3cc
+    Step 3/7 : ENV NJS_VERSION   1.13.6.0.1.14-1~stretch
+     ---> Running in df3282dfa152
+    Removing intermediate container df3282dfa152
+     ---> b4b4df428136
+    Step 4/7 : RUN apt-get update 	&& apt-get install --no-install-recommends --no-install-suggests -y gnupg1 	&& 	
+    .
+    .
+    .
+     ---> Using cache
+     ---> 713bcce48334
+    Step 6/7 : EXPOSE 80 443
+     ---> Using cache
+     ---> 7270661a16d0
+    Step 7/7 : CMD ["nginx", "-g", "daemon off;"]
+     ---> Using cache
+     ---> ef446a55347e
+    Successfully built ef446a55347e
+    Successfully tagged customnginx:latest
+    $docker image ls
+    REPOSITORY                                  TAG                 IMAGE ID            CREATED             SIZE
+    customnginx                                 latest              ef446a55347e        2 minutes ago       108MB
+
+
+Use `WORKDIR` to change directory. This is best pratice. See example below where we copy `index.html` to the docker image
+
+    $ll
+    total 16
+    drwxr-xr-x  2 endrit root 4096 Aug 22 21:24 ./
+    drwxr-xr-x 32 endrit root 4096 Aug 22 21:24 ../
+    -rw-r--r--  1 endrit root  410 Aug 22 21:24 Dockerfile
+    -rw-r--r--  1 endrit root  249 Aug 22 21:24 index.html
+    $cat Dockerfile
+    FROM nginx:latest
+    WORKDIR /usr/share/nginx/html
+    COPY index.html index.html
+
+we can use `prune` to clean up images, volumes, build cache and containers
+
+    docker image prune                  #to clean up just dangling images
+    docker system prune                 #will clean up everything
+
+    docker image prune -a               #will remove all images that are not used
+    docker system df                    #to see space usage
+
+    
