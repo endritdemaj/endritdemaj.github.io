@@ -403,9 +403,9 @@ we can use `prune` to clean up images, volumes, build cache and containers
 
 Volume in Dockerfile
 
-Anyfile that is put in the Volume will outlive the contianer until we delete the volume. They needs to be manually deleted.
+Any file that is put in the Volume will outlive the contianer until we delete the volume. They needs to be manually deleted.
     
-    VOLUME /var/lib/mysql                           #Creates a new Volume on the host in 'dockerdir'/somehash/'_data and on the container under /var/lib/mysql
+    VOLUME /var/lib/mysql                           #Creates a new named Volume on the host in 'dockerdir'/somehash/'_data and on the container under /var/lib/mysql
 
     docker inspect <container>                      #under Volumes we can see the Volumes and under Mounts we can see the mapping from the Host(Source) to the Container(Destination)
 
@@ -415,4 +415,51 @@ Anyfile that is put in the Volume will outlive the contianer until we delete the
     docker volume create                            #create a new Docker Volume ahead of the Time
 
 ### Bind Mounting
+
+Maps a host file or directory to a container file or directory. Two locations pointing to the same files.
+Has to be done in container run, cant be done in Dockerfile
+
+    ... run -v /home/endrit/stuff:/path/container
+
+For Example i start here a Postgres db
+
+    docker run -d --name pgdb962 -v pgdata:/var/lib/postgresql/data -e POSTGRES_PASSWORD=yourPW -d postgres:9.6.2
+
+
+## Docker Compose
+
+Configure relationships between containers
+save our docker container run settings in easy-to-read file
+create one-liner developer environment startups
+1. YAML-Formatted file that describes our solution options for :
+    * container
+    * networks
+    * volumes
+2. A CLI tool `docker-compose` used for local dev/test automation with those YAML files
+
+### docker-compose.yml
+
+Here is an example of a `docker-compose.yml`
+
+    version: '2'
+
+    # same as
+    # docker run -p 80:80 -v $(pwd):/tmp nginx
+
+    services:
+        nginx:
+            image:nginx
+            volumes:
+                -.:tmp
+            ports:
+                - '80:80'
+
+
+
+
+
+
+
+
+
 
