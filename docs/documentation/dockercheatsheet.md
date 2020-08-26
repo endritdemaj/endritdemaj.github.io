@@ -294,6 +294,13 @@ I can create new Tags as we want
     endritdemaj/nginx                           latest              4bb46517cac3        10 days ago         133MB
     endritdemaj/nginx                           testing             4bb46517cac3        10 days ago         133MB
 
+If you want to create an Image of a running container you do the following:
+
+    docker commit <containerid>
+    #Find in docker image ls the new image
+    docker image tag <imageid> repo:tag
+    docker image push repo:tag                      #to push the image to the repo
+
 ### Dockerfile
 
 The instructions on how to build an Image are stored in a Dockerfile  
@@ -392,4 +399,20 @@ we can use `prune` to clean up images, volumes, build cache and containers
     docker image prune -a               #will remove all images that are not used
     docker system df                    #to see space usage
 
+## Container Lifetime & Persistent Data
+
+Volume in Dockerfile
+
+Anyfile that is put in the Volume will outlive the contianer until we delete the volume. They needs to be manually deleted.
     
+    VOLUME /var/lib/mysql                           #Creates a new Volume on the host in 'dockerdir'/somehash/'_data and on the container under /var/lib/mysql
+
+    docker inspect <container>                      #under Volumes we can see the Volumes and under Mounts we can see the mapping from the Host(Source) to the Container(Destination)
+
+    docker container run -d mysql -v friendlyname:/var/lib/sql          #Creates a volume with a friendly name on the Host and on the Container
+    docker volumes ls                               #check mounted volumes and with inspect to check the mounts
+
+    docker volume create                            #create a new Docker Volume ahead of the Time
+
+### Bind Mounting
+
