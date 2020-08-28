@@ -45,6 +45,7 @@ what is happening in 'docker container run'
     ps aux 											    #show processer running inside a docker container too without hiding it
     docker container inspect							#details of the container
     docker container stats								#stats of all container
+    docker update                                       #updating a container without needing to kill it or restart, e.g RAM, Memory, CPU or so. Too much CPU to limit
 
 ## Networking
 `<bridge(docker0)>` is the default network that routes to the Host Network Interface  
@@ -454,8 +455,114 @@ Here is an example of a `docker-compose.yml`
             ports:
                 - '80:80'
 
+## docker-compose CLI
+
+    docker-compose up               # setup volumes/networks and start all containers
+    docker-compose down             # stop all containers and remove cont/vol/net
+
+    docker-compose ps               #shows running containers
+    docker-compose logs             #show logs of the containers 
+
+    
+if all your project had a Dockerfile and docker-compose.yml then a "new developer onboardning" would be:
+    git clone github.com/some/software
+    docker-compose up
+
+First docker-compose.yml
+If we change the name than we have to give it with a parameter to the file
+This code starts up a `drupal` container with a `postgres` database. Remember that the default host for postgress is `localhos` but outside of the container its the service name
+
+    version: '2'
+    services:
+      drupal:
+        image: drupal
+        ports:
+        - "8080:80"
+        volumes:
+        - drupal-profiles:/var/www/html/profiles
+        - drupal-sites:/var/www/html/sites 
+        - drupal-themes:/var/www/html/themes 
+        environment:
+            POSTGRES_PASSWORD: example
+        links:
+        - postgres2
+    
+      postgres2:
+        image: postgres
+        environment:
+            POSTGRES_DB: drupal
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: example
+
+    volumes:
+        drupal-profiles:
+        drupal-sites:
+        drupal-themes:
+
+Docker compose build. If we have this option in the Yaml it will build the image the first time it runs. If we want to force build the image, we hate to run 
+Great for complex build that have lots of vars or build args
+
+    docker-compose build
+    docker-compose up --build
+
+In the below example we build a custom image if the image nginx-custom is not in the cache. 
+If the service need a database we would just hang that in
+    
+    #docker-compose.yml
+        services:
+            proxy:
+                build:                                      #Tells that the image needs to be build
+                    context: .                              #Build the Image in the current dir
+                    dockerfile: nginx.Dockerfile            #Build the image using this Dockerfile
+                image: nginx-custom                         #name the image after the build nginx-custom
+                ports:
+                    - '80:80'
 
 
+## Docker Swarm
+
+How do we automate container lifecycle?
+How can we easily scale out/in/up/down?
+How can we ensure our containers are re-created if they fail?
+How can we replace containers without downtine (blue/green deploy)
+
+Swarm Mode is a clustering solution built inside Docker
+
+    docker swarm init                       #to initialize swarm
+    To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1####################################################################3
+
+    To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
+Service in a Swarm replaces `docker run`
+
+    docker service <CMD>
+    docker service create alpine ping 8.8.8.8               # create a new service that runs alpine container that does a ping to google 
+    docker service ls                                       # list all the services
+    docker service ps <ServiceName or ID>                   # list all the contianers inside a service
+    docker service update <ID> --replicas 3                 # Now we want to scale our service up
+    docker node update --role manager <ipofnode>
+
+    $ docker service create --replicas 3 alpine ping 8.8.8.8
+    $ docker service ps fervent_mendel 
+    ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE            ERROR               PORTS
+    xkafd3dyla7z        fervent_mendel.1    alpine:latest       node1               Running             Running 37 seconds ago                       
+    p89fx51fejae        fervent_mendel.2    alpine:latest       node2               Running             Running 37 seconds ago                       
+    gyx2xbuobitz        fervent_mendel.3    alpine:latest       node3               Running             Running 37 seconds ago     
+
+
+## Docker Machine
+
+CLI tool to create new nodes using virtualboc
+
+    docker-machine create node1
+    docker-machine create node2
+    docker-machine create node3
+
+    #access 
+    docker-machine ssh <name>
+    docker-machine env node1
 
 
 
