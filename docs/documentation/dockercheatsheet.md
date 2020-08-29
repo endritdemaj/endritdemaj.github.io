@@ -551,6 +551,73 @@ Service in a Swarm replaces `docker run`
     p89fx51fejae        fervent_mendel.2    alpine:latest       node2               Running             Running 37 seconds ago                       
     gyx2xbuobitz        fervent_mendel.3    alpine:latest       node3               Running             Running 37 seconds ago     
 
+Network driver Overlay Multi-Host Networking. Its creating a swarm wide bridge network so that containers across hosts can communicate to each other
+Just choose `--driver overlay` when creating network
+
+    docker network create --driver overlay mydrupal
+    docker service create --name psql --network mydrupal -e POSTGRES_PASSWORD=example postgres      #create a postgress service on mydrupal network
+
+Scaling out with Routing Mesh
+
+    #create an elasticsearch service with three containers
+    docker service create --name search --replicas 3 -p 9200:9200 elasticsearch:2
+
+When we now do a curl on the localhost, the routing mesh forward with round robin our request to all thre nodes the service is running on.
+
+This is stateless load balancing. This LB is at OSI Layer 3 (TCP), not Layer 4 (DNS)
+Both limitation can be overcome with: `nginx or HAProxy LB proxy, or:` Docker Enterprise Edition which comes with built in L4 web proxy.
+
+Create a Dogs VS Cats voting app [klick](https://github.com/BretFisher/udemy-docker-mastery/tree/main/swarm-app-1#assignment-create-a-multi-service-multi-node-web-app)
+
+    docker network create --driver overlay backend
+    docker network create --driver overlay frontend
+
+    docker volume create db-data
+
+    docker service create --name vote -p 80:80 --network frontend --replicas 2 bretfisher/examplevotingapp_vote
+    docker service create --name redis --network frontend redis:3.2
+    docker service create --name worker --network frontend --network backend bretfisher/examplevotingapp_worker:java
+    docker sercice create --name db --network backend --mount type=volume,source=db-data,target=/var/lib/postgresql/data -e POSTGRES_HOST_AUTH_METHOD=trust postgres:9.5
+    docker service create --name result -p 5001:80 --network backend bretfisher/examplevotingapp_result
+
+### Stacks 
+Its like compose for swarm. With options to deploy or update something
+Many services, volumes overlay networks and so on everything in a YAML-File
+
+    docker stack deploy -c voting.yml voteapp                   #deploying a voteapp from the YAML-File
+
+To update the our stack we need to make changes to the Yaml file and hit that command again with the same stack name
+
+#### Sectrets
+
+Easiest "secure" solution for storing sercrets in Swarm
+What is a Secret?
+* Username and password
+* TLS Certificate and keys
+* SSH keys
+* Any data you would prefer not to be "on front page of news"
+Sevrets are first stored in Swarm, then assigned to a Service(s)
+Only Containers in assigned Service(s) can see them
+
+Turorial
+
+    echo "veryStrongPW" >> mypw.txt
+    docker secret create mypw mypw.txt
+    #another option
+    echo "myDBPW" | docker secret create psql_pass -
+    docker service create --name psq --secret mypw -e POSTGRES_PASSWORD_FILE=/run/secrets/mypw postgres
+    docker service update --secret-rm                           #remove the secret
+
+YAML-File 
+
+       ...
+        POSTGRES_PASSWORD_FILE: run/secrets/psq-pw
+        secrets: 
+        - psql-pw
+    secrets:
+        psql-pw:
+            external:true
+
 
 ## Docker Machine
 
