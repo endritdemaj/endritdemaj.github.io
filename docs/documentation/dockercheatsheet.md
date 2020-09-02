@@ -717,17 +717,104 @@ For remote self-signed TLS, enable "insecure-registry" in engine
     #Push the image to the local Registry
     docker push 127.0.0.1:5000/hello-world
 
-Now the image is in our Registry on the localhost
-Thins to we need to know:
-* Use Volume to store Registry Data. 
+Now the image is in our Registry on the localhost and we can remove it from local machine and pull it again if needed with `docker image rm` and `docker image pull 127.0.0.1:5000/hello-world`
 
-    #create a Registry that runs on port 5000 on local host, with a volume mountet to $pwd for the registry data
+Things to we need to know:  
+`Use Volume to store Registry Data.`  
+Re-create a Registry that runs on port 5000 on local host, with a volume mountet to $pwd for the registry data
+
     docker container run -d -p 5000:5000 --name registry -v $(pwd)/registry-data:/var/lib/registry registry
 
+### Enabling SSL and HTTPS for the Secure Local Registry
 
+    mkdir certs
+    openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key -x509 -days 365 -out certs/domain.crt
 
+    mkdir /etc/docker/certs.d
+    mkdir /etc/docker/certs.d/127.0.0.1:5000 
+    cp $(pwd)/certs/domain.crt /etc/docker/certs.d/127.0.0.1:5000/ca.crt
 
+    #Kill the Docker Deamon
+    pkill dockerd
+    dockerd > /dev/null 2>&1 &
 
+For the secure registry, we need to run a container which has the SSL certificate and key files available, which we’ll do with an additional volume mount (so we have one volume for registry data, and one for certs). We also need to specify the location of the certificate files, which we’ll do with environment variables:
+* `--restart unless-stopped` - restart the container when it exits, unless it has been explicitly stopped. When the host restarts, Docker will start the registry container, so it’s always available.
+* `-v $pwd\certs:c:\certs` - mount the local certs folder into the container, so the registry server can access the certificate and key files;
+* `-e REGISTRY_HTTP_TLS_CERTIFICATE` - specify the location of the SSL certificate file;
+* `-e REGISTRY_HTTP_TLS_KEY` - specify the location of the SSL key file.
+    
+    mkdir registry-data
+    docker run -d -p 5000:5000 --name registry \
+        --restart unless-stopped \
+        -v $(pwd)/registry-data:/var/lib/registry -v $(pwd)/certs:/certs \
+        -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
+        -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
+        registry
+
+#### Accessing the Secure Registry
+
+    docker pull hello-world
+    docker tag hello-world 127.0.0.1:5000/hello-world
+    docker push 127.0.0.1:5000/hello-world
+    docker pull 127.0.0.1:5000/hello-world
+
+#### Enable Basic Authentication for the Secure Registry
+
+The registry server and the Docker client support basic authentication over HTTPS. The server uses a file with a collection of usernames and encrypted passwords. The file uses Apache’s htpasswd.
+
+Create the password file with an entry for user “moby” with password “gordon”;
+The options are:
+* `–entrypoint` Overwrite the default ENTRYPOINT of the image
+* `-B` Use bcrypt encryption (required)
+* `-b` run in batch mode
+* `-n` display results
+* Looks like the new registry image doesnt have htpasswd in it. So we need to find a new one
+
+    mkdir auth
+    #docker run --entrypoint htpasswd registry:latest -Bbn moby gordon > auth/htpasswd
+    docker run --entrypoint htpasswd registry:2.6.2 -Bbn moby gordon > auth/htpasswd
+
+Now we have the user and hashed PW in the auth/htpasswd file. Now we run the new Registry
+* `-e REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd` - specify the location of the htpasswd file.
+    docker kill registry
+    docker rm registry
+    docker run -d -p 5000:5000 --name registry \
+      --restart unless-stopped \
+      -v $(pwd)/registry-data:/var/lib/registry \
+      -v $(pwd)/certs:/certs \
+      -v $(pwd)/auth:/auth \
+      -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
+      -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
+      -e REGISTRY_AUTH=htpasswd \
+      -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" \
+      -e "REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd" \
+      registry
+
+Now we need to login to our Registry and we can start pushing and pulling
+
+    $docker login 127.0.0.1:5000
+    Username: moby
+    Password:
+    $docker pull 127.0.0.1:5000/hello-world
+    Using default tag: latest
+    latest: Pulling from hello-world
+    Digest: sha256:90659bf80b44ce6be8234e6ff90a1ac34acbeb826903b02cfa0da11c82cbc042
+    Status: Image is up to date for 127.0.0.1:5000/hello-world:latest
+    127.0.0.1:5000/hello-world:latest
+
+### Using Registry with Swarm
+
+The image has to be reachable from every node. We cant create an image on node1 and except it to work on node to without pushing it to the Registry.
+ProTip: Use a hosted SaaS registry if possible
+
+    docker service create --name registry --publish 5000:5000 registry
+    docker pull hello-world
+    docker tag hello-world:latest 127.0.0.1:5000/hello-world
+    docker push 127.0.0.1:5000/hello-world
+    docker pull nginx
+    docker tag nginx:latest 127.0.0.1:5000/nginx
+    docker push 127.0.0.1:5000/nginx
 
 ## Warning
 Remove any image 
