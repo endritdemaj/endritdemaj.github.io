@@ -303,9 +303,9 @@
     "12": {
       "js": [
         {
-          "file": "50deafe8.31172da5.js",
-          "hash": "4a5e2fdd2771cdeea8ad",
-          "publicPath": "/endritdemaj.github.io/50deafe8.31172da5.js"
+          "file": "50deafe8.00578bfd.js",
+          "hash": "213837e66faa2dc53411",
+          "publicPath": "/endritdemaj.github.io/50deafe8.00578bfd.js"
         }
       ]
     },
@@ -483,9 +483,9 @@
     "32": {
       "js": [
         {
-          "file": "runtime~main.1776a29a.js",
-          "hash": "65d247f4dbc89369f5d7",
-          "publicPath": "/endritdemaj.github.io/runtime~main.1776a29a.js"
+          "file": "runtime~main.06ca550c.js",
+          "hash": "0018019987ab717808f1",
+          "publicPath": "/endritdemaj.github.io/runtime~main.06ca550c.js"
         }
       ]
     },
