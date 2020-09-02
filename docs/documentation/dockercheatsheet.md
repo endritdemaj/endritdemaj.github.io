@@ -617,7 +617,10 @@ YAML-File
     secrets:
         psql-pw:
             external:true
+        psql-user:
+            file:./psql_user.txt
 
+In Compose it works the same but without the decryption
 
 ## Docker Machine
 
@@ -630,6 +633,112 @@ CLI tool to create new nodes using virtualboc
     #access 
     docker-machine ssh <name>
     docker-machine env node1
+
+## Full App Lifecycle
+
+    docker-compose up                               # automatically reads docker-compose.yml and overrides with docker-compose.override.yml
+    docker stack deploy                             # will automatically get the docker-compose.prod.yml
+    docker-compose -f a.yml -f b.yml conifg         # merge the to yml files
+
+### Service Updates
+
+Updates 
+
+    docker service scale web=4
+
+    docker service update --image myapp:1.2.1 <servicename>                 # to update an image of a service
+    docker service update --env-add NODE_ENV=production --publish-rm 8080   #add an environment variable and remove the port
+    docker service scale web=8 api=6                                        #scale multiple services 
+    docker stack deploy -c file.yml <stackname>                             # to update a stack
+
+Example:
+
+    #create nginx service
+    $docker service create -p 8088:80 --name web nginx:1.13.7
+    $docker service ls
+     ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
+     fa0hj7brl3l3        web                 replicated          1/1                 nginx:1.13.7        *:8088->80/tcp
+    
+    #scale up the service
+    $docker service scale web=5
+    $docker service ls
+     ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
+     fa0hj7brl3l3        web                 replicated          5/5                 nginx:1.13.7        *:8088->80/tcp
+
+    #do a Rolling update now by changing the image of nginx
+    docker service update --image nginx:1.13.6 web
+
+    #change the port from 8088 to 9090
+    # here we first have to remove the old one and add the new one to it
+    docker service update --publish-rm 8088 --publish-add 9090:80 web
+
+    # Force updates to pick leas used nodes. To schedule nodes 
+    docker service update --force web
+
+### Docker healthchecks
+
+    docker container ls
+    docker container inspect            #Last 5 healthchecks
+
+    docker run \
+        --health-cmd='curl -f localhost:9200/_cluster/health || false' \
+        --health-intercal=5s \
+        --health-retries-3 \
+        --health-timeout=2s \
+        --health-start-period=15s \
+        elasticsearch:2
+
+    #or in a dockerfile
+        --inetrval=DURATION(default:30)
+        --timeout=DURATION(default:30s)
+        --start-period=DURATION(default:0s)(17.09)
+        --retries=N (default 3)
+    
+
+## Running Docker Registry
+A private image registry for your network
+Parkt of docker/distibutions GitHub repo
+At its core: a web API and storage system, written in Go
+Is a https Server running at Port 5000
+Re-Tag an existing image and push it our new Registry
+"Secure by Default": Docker wont talk to registry without HTTPS
+    Except, localhost
+For remote self-signed TLS, enable "insecure-registry" in engine
+
+    #run the Registry
+    docker container run -d -p 5000:5000 --name registry registry
+    
+    #Pull image from Hub
+    docker pull hello-world
+    
+    #Tag the image with our new local Registry
+    docker tag hello-world 127.0.0.1:5000/hello-world
+    
+    #Push the image to the local Registry
+    docker push 127.0.0.1:5000/hello-world
+
+Now the image is in our Registry on the localhost
+Thins to we need to know:
+* Use Volume to store Registry Data. 
+
+    #create a Registry that runs on port 5000 on local host, with a volume mountet to $pwd for the registry data
+    docker container run -d -p 5000:5000 --name registry -v $(pwd)/registry-data:/var/lib/registry registry
+
+
+
+
+
+
+## Warning
+Remove any image 
+
+    for image in $(docker image ls --format '{{.ID}}'); do docker image rm -f $image; done
+
+Remove any container 
+
+    for id in $(docker ps -a --format '{{.ID}}');do docker rm -f $id;done
+
+
 
 
 

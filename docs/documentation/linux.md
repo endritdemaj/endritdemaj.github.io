@@ -88,6 +88,7 @@ sidebar_label: Linux Cheatsheat
     du -s /var/log/* | sort -n | tail -n 50                         #list files in /var/log ordered by size 
     swapoff -a && swapon -a                                         #umount and mount swap at runtime
     lsof -nP +L1 grep /tmp/ oder lsof -nP +L1 grep deleted          #check if files are deleted and who is using them (deleted)
+    tree .                                                          # print tree of the current directory
 
 ### How to mount a new Drive /dev/sdb
 
