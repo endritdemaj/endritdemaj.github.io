@@ -816,6 +816,8 @@ ProTip: Use a hosted SaaS registry if possible
     docker tag nginx:latest 127.0.0.1:5000/nginx
     docker push 127.0.0.1:5000/nginx
 
+# Kubernetes 
+
 ## Warning
 Remove any image 
 

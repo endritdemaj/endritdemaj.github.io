@@ -89,6 +89,7 @@ sidebar_label: Linux Cheatsheat
     swapoff -a && swapon -a                                         #umount and mount swap at runtime
     lsof -nP +L1 grep /tmp/ oder lsof -nP +L1 grep deleted          #check if files are deleted and who is using them (deleted)
     tree .                                                          # print tree of the current directory
+    yum versionlock <package-name>                                  
 
 ### How to mount a new Drive /dev/sdb
 

@@ -10,8 +10,8 @@
   "sidebar_label": "IBM Tivoli Storage Manager",
   "sidebar": "someSidebar",
   "previous": {
-    "title": "Docker Cheatsheat",
-    "permalink": "/endritdemaj.github.io/docs/documentation/dockercheatsheet"
+    "title": "Kubernetes Cheatsheet",
+    "permalink": "/endritdemaj.github.io/docs/documentation/kubernetescheatsheet"
   },
   "next": {
     "title": "Systemd Cheatsheat",

@@ -26,6 +26,10 @@
               "path": "/endritdemaj.github.io/docs/documentation/dockercheatsheet"
             },
             {
+              "id": "documentation/kubernetescheatsheet",
+              "path": "/endritdemaj.github.io/docs/documentation/kubernetescheatsheet"
+            },
+            {
               "id": "documentation/linuxcheatsheet",
               "path": "/endritdemaj.github.io/docs/documentation/linuxcheatsheet"
             },

@@ -8,6 +8,11 @@ export default [
   exact: true,
 },
 {
+  path: '/endritdemaj.github.io/__docusaurus/debug',
+  component: ComponentCreator('/endritdemaj.github.io/__docusaurus/debug','b2b'),
+  exact: true,
+},
+{
   path: '/endritdemaj.github.io/blog',
   component: ComponentCreator('/endritdemaj.github.io/blog','80d'),
   exact: true,
@@ -54,7 +59,7 @@ export default [
 },
 {
   path: '/endritdemaj.github.io/docs',
-  component: ComponentCreator('/endritdemaj.github.io/docs','0bc'),
+  component: ComponentCreator('/endritdemaj.github.io/docs','e43'),
   
   routes: [
 {
@@ -75,6 +80,11 @@ export default [
 {
   path: '/endritdemaj.github.io/docs/documentation/dockercheatsheet',
   component: ComponentCreator('/endritdemaj.github.io/docs/documentation/dockercheatsheet','c40'),
+  exact: true,
+},
+{
+  path: '/endritdemaj.github.io/docs/documentation/kubernetescheatsheet',
+  component: ComponentCreator('/endritdemaj.github.io/docs/documentation/kubernetescheatsheet','83a'),
   exact: true,
 },
 {
