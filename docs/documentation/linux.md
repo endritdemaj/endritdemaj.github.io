@@ -90,6 +90,7 @@ sidebar_label: Linux Cheatsheat
     lsof -nP +L1 grep /tmp/ oder lsof -nP +L1 grep deleted          #check if files are deleted and who is using them (deleted)
     tree .                                                          # print tree of the current directory
     yum versionlock <package-name>                                  
+    getent passwd <UID>                                             #to get Userid from uid
 
 ### How to mount a new Drive /dev/sdb
 
