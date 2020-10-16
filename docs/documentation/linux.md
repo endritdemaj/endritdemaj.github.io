@@ -91,6 +91,7 @@ sidebar_label: Linux Cheatsheat
     tree .                                                          # print tree of the current directory
     yum versionlock <package-name>                                  
     getent passwd <UID>                                             #to get Userid from uid
+    cat testfile | grep --color=always -z 'hello'                   #mark the word hello und show all lines with grep
 
 ### How to mount a new Drive /dev/sdb
 
