@@ -150,5 +150,88 @@ Try it out with
 `> kubectl create deployment sample --image nginx --dry-run -o yaml`
 
 
+## Imperative vs. Declarative
+
+Learn the Imperative CLI for easy control of local and test setups
+Move to apply -f file.yml and apply -f directory\
+Store yaml in git, git commit each change before you apply
+
+## kubectl apply 
+
+    #create/update resources in a file
+    kubectl apply -f filename.yml
+    #create/update a whole driectory of yaml
+    kubectl apply -f myyaml/
+    #create/update from  a URL
+    kubectl apply -f https://bret.run/pod.yml
+
+## Kubernetes Configuration YAML
+
+* Kubernetes configuration file (YAML or JSON)
+* Each file contains one or more manifests
+* Each manifest describes an API object (deployment, job, secret)
+* Each manifest needs four parts(root key:values in the file)
+*   apiVersion:
+*   kind:
+*   metadata:
+*   spec:
+
+Example of a yml-file
+
+```
+$cat app.yml 
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-nginx-service
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+  selector:
+    app: app-nginx
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-nginx
+  template:
+    metadata:
+      labels:
+        app: app-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.17.3
+        ports:
+        - containerPort: 80
+```  
+Building Your YAML spec  
+We can get  all the keys each kind supports  
+`kubectl explain services --recursive`  
+List only the specs  
+`kubectl explain services.spec`
+
+
+## Hands on
+Start the Services from ./app.yml 
+`kubectl apply -f app.yml` 
+check if there are any changes and update the services  
+`kubectl apply -f app.yml --server-dry-run` 
+Compare the yaml with the stuff running in the Server
+`kubectl diff -f app.yml `  
+
+## Labels and Annotations
+Lables goes under `metadata:` in your YAML  
+Simple list of key:value for identifying your resource lateyer by selecting , grouping, or filtering for it  
+Comon examples include `tier: frontend, app:api, env:prod, customer:acme.co`
+
+
+
 
 
