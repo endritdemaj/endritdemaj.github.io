@@ -92,6 +92,7 @@ sidebar_label: Linux Cheatsheat
     yum versionlock <package-name>                                  
     getent passwd <UID>                                             #to get Userid from uid
     cat testfile | grep --color=always -z 'hello'                   #mark the word hello und show all lines with grep
+    chattr +i <filename>					    #Make a file unchangeable umutable <chattr -i> to take that back
 
 ### How to mount a new Drive /dev/sdb
 
@@ -116,7 +117,34 @@ sidebar_label: Linux Cheatsheat
     #mount new drive
     mount /dev/vg_daten1/lv_opt_data /opt/data
 
+### Generate SSL Certificates and get them signed 
+	1. generate private key
+	$openssl req -x509 -nodes -days 730 -newkey rsa:2048 -keyout <private-ssl-key>.pem
+
+	2. generate CSR with that private key
+	$openssl req -new -key <private-ssl-key>.pem -sha256 -nodes  -out <csr-ssl>.csr
+
+	3. request signed CSR
+		Go to ASK your IT department
+	
+	4. You will get a signed CRS-Certificate
+		You will get a signed CSR-Certifiace something like <csr-ssl>.cer
+
+	Check if the md5sums is correct. Need to be equal
+	
+	#for private KEY
+	openssl rsa -noout -modulus -in <private-ssl-key>.pem | openssl md5
+	(stdin)= f57a3b98b080f6d34c6e3546badffb14
+
+	#for CSR-File
+	openssl req -noout -modulus -in <csr-ssl>.csr | openssl md5
+	(stdin)= f57a3b98b080f6d34c6e3546badffb14
+
+	#for Signed Cert
+	openssl x509 -noout -modulus -in csr_dominot7<csr-ssl>.cer | openssl md5
+	(stdin)= f57a3b98b080f6d34c6e3546badffb14
  
+
 
  
 
