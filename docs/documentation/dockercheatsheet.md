@@ -308,7 +308,7 @@ The instructions on how to build an Image are stored in a Dockerfile
 
 Package Manager like apt and yum are one of the reasons to build container `FROM Debian, Ubuntu, Fedora or CentOS`
 
-    docker build -f some-dockerfile                         #to build from a specific dockerfile instead of the default
+    docker build -f some-dockerfile .                         #to build from a specific dockerfile instead of the default
 
 When we build an Image, it pulls the debian:jessie image to the local Docker Host from docker hub. Then each line is going to be executed and cached layer by layer on the docker engine
 Each Command in a Dockerfile is a new Image Layer
