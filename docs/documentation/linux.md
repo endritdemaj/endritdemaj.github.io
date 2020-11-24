@@ -122,6 +122,7 @@ sidebar_label: Linux Cheatsheat
 	$openssl req -x509 -nodes -days 730 -newkey rsa:2048 -keyout <private-ssl-key>.pem
 
 	2. generate CSR with that private key
+	#dont forget the Wildcards if using subdomains
 	$openssl req -new -key <private-ssl-key>.pem -sha256 -nodes  -out <csr-ssl>.csr
 
 	3. request signed CSR
