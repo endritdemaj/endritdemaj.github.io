@@ -44,8 +44,7 @@ sidebar_label: Linux Cheatsheat
     /bin                                                            #all executabels
     lsof                                                            #-u or -p user und process, who is using the files
     lsblk                                                           #volume info
-    grep <term> <file>                                              #search for term in file
-    grep -i                                                         #ignore case
+   
     Color of cmd                                                    #export PS1="\e[0;32m[\u@\h \W]\$ \e[m "  1 fuer gruen, 2 fuer rot, 3 fuer gelb
     :%s/oldString/newString                                         #find and repleace oldstring with new string in vim. Delimeter can be changed from / to #
     apt-get update --allow-unauthenticated                          #
@@ -55,8 +54,6 @@ sidebar_label: Linux Cheatsheat
     yum --showduplicates list httpd | expand                        #show all versions in repo
     sudo apt list --installed | grep -i cuda                        #list all installed from cuda
     yum list installed | grep nvidia                                #list all installed from nvidia on rhel
-    sudo grep -r <pattern> path                                     #search for pattern in files
-    grep -rnw '/path' -e 'pattern'                                  #    
     lsof -i -P -n                                                   #check the listening ports
     tmux                                                            #tool to monitor- split console in windows
         Options:
@@ -91,7 +88,6 @@ sidebar_label: Linux Cheatsheat
     tree .                                                          # print tree of the current directory
     yum versionlock <package-name>                                  
     getent passwd <UID>                                             #to get Userid from uid
-    cat testfile | grep --color=always -z 'hello'                   #mark the word hello und show all lines with grep
     chattr +i <filename>					    #Make a file unchangeable umutable <chattr -i> to take that back
 
 ### How to mount a new Drive /dev/sdb
@@ -144,6 +140,14 @@ sidebar_label: Linux Cheatsheat
 	#for Signed Cert
 	openssl x509 -noout -modulus -in csr_dominot7<csr-ssl>.cer | openssl md5
 	(stdin)= f57a3b98b080f6d34c6e3546badffb14
+ ### GREP 
+ 
+ 	 grep <term> <file>                                              #search for term in file
+	 grep -i                                                         #ignore case
+	 sudo grep -r <pattern> path                                     #search for pattern in files
+	 grep -rnw '/path' -e 'pattern'                                  #    
+	 cat testfile | grep --color=always -z 'hello'                   #mark the word hello und show all lines with grep
+	 grep -ir string *						 #search recursively for 'string' in all files in current dir
  
 
 
