@@ -1,0 +1,57 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/endritdemaj.github.io/docs",
+      "latestVersionName": null,
+      "versions": [
+        {
+          "name": null,
+          "path": "/endritdemaj.github.io/docs",
+          "mainDocId": "doc1",
+          "docs": [
+            {
+              "id": "doc1",
+              "path": "/endritdemaj.github.io/docs/"
+            },
+            {
+              "id": "doc2",
+              "path": "/endritdemaj.github.io/docs/doc2"
+            },
+            {
+              "id": "doc3",
+              "path": "/endritdemaj.github.io/docs/doc3"
+            },
+            {
+              "id": "documentation/ansiblecheatsheet",
+              "path": "/endritdemaj.github.io/docs/documentation/ansiblecheatsheet"
+            },
+            {
+              "id": "documentation/dockercheatsheet",
+              "path": "/endritdemaj.github.io/docs/documentation/dockercheatsheet"
+            },
+            {
+              "id": "documentation/kubernetescheatsheet",
+              "path": "/endritdemaj.github.io/docs/documentation/kubernetescheatsheet"
+            },
+            {
+              "id": "documentation/linuxcheatsheet",
+              "path": "/endritdemaj.github.io/docs/documentation/linuxcheatsheet"
+            },
+            {
+              "id": "documentation/systemdcheatsheet",
+              "path": "/endritdemaj.github.io/docs/documentation/systemdcheatsheet"
+            },
+            {
+              "id": "documentation/tivolicheatsheet",
+              "path": "/endritdemaj.github.io/docs/documentation/tivolicheatsheet"
+            },
+            {
+              "id": "mdx",
+              "path": "/endritdemaj.github.io/docs/mdx"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

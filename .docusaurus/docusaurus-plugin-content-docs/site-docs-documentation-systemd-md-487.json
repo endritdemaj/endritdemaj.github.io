@@ -1,0 +1,20 @@
+{
+  "unversionedId": "documentation/systemdcheatsheet",
+  "id": "documentation/systemdcheatsheet",
+  "isDocsHomePage": false,
+  "title": "Systemd Cheatsheat",
+  "description": "systemd",
+  "source": "@site/docs/documentation/systemd.md",
+  "permalink": "/endritdemaj.github.io/docs/documentation/systemdcheatsheet",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/documentation/systemd.md",
+  "sidebar_label": "Systemd Cheatsheat",
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "IBM Tivoli Storage Manager (TSM) Cheatsheat",
+    "permalink": "/endritdemaj.github.io/docs/documentation/tivolicheatsheet"
+  },
+  "next": {
+    "title": "Ansible Cheatsheat",
+    "permalink": "/endritdemaj.github.io/docs/documentation/ansiblecheatsheet"
+  }
+}

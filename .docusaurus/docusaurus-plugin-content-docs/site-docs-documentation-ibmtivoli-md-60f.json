@@ -1,0 +1,20 @@
+{
+  "unversionedId": "documentation/tivolicheatsheet",
+  "id": "documentation/tivolicheatsheet",
+  "isDocsHomePage": false,
+  "title": "IBM Tivoli Storage Manager (TSM) Cheatsheat",
+  "description": "Acess TSM",
+  "source": "@site/docs/documentation/ibmtivoli.md",
+  "permalink": "/endritdemaj.github.io/docs/documentation/tivolicheatsheet",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/documentation/ibmtivoli.md",
+  "sidebar_label": "IBM Tivoli Storage Manager",
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Kubernetes Cheatsheet",
+    "permalink": "/endritdemaj.github.io/docs/documentation/kubernetescheatsheet"
+  },
+  "next": {
+    "title": "Systemd Cheatsheat",
+    "permalink": "/endritdemaj.github.io/docs/documentation/systemdcheatsheet"
+  }
+}

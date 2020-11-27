@@ -1,0 +1,20 @@
+{
+  "unversionedId": "documentation/ansiblecheatsheet",
+  "id": "documentation/ansiblecheatsheet",
+  "isDocsHomePage": false,
+  "title": "Ansible Cheatsheat",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/documentation/ansiblecheatsheet.md",
+  "permalink": "/endritdemaj.github.io/docs/documentation/ansiblecheatsheet",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/documentation/ansiblecheatsheet.md",
+  "sidebar_label": "Ansible Cheatsheat",
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Systemd Cheatsheat",
+    "permalink": "/endritdemaj.github.io/docs/documentation/systemdcheatsheet"
+  },
+  "next": {
+    "title": "Powered by MDX",
+    "permalink": "/endritdemaj.github.io/docs/mdx"
+  }
+}
