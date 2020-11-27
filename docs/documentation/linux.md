@@ -138,8 +138,15 @@ sidebar_label: Linux Cheatsheat
 	(stdin)= f57a3b98b080f6d34c6e3546badffb14
 
 	#for Signed Cert
-	openssl x509 -noout -modulus -in csr_dominot7<csr-ssl>.cer | openssl md5
+	openssl x509 -noout -modulus -in <csr-ssl>.cer | openssl md5
 	(stdin)= f57a3b98b080f6d34c6e3546badffb14
+	
+	# for webpage
+	echo | openssl s_client -servername <NAME> -connect <HOST:PORT> 2>/dev/null | openssl x509 -noout -dates
+	
+	#check date for ssl-cls cert
+	openssl x509 -enddate -noout -in <csr-ssl>.cer
+	openssl x509 -dates -noout -in <csr-ssl>.cer
  ### GREP 
  
  	 grep <term> <file>                                              #search for term in file
