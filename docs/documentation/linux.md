@@ -154,8 +154,7 @@ sidebar_label: Linux Cheatsheat
 	 sudo grep -r <pattern> path                                     #search for pattern in files
 	 grep -rnw '/path' -e 'pattern'                                  #    
 	 cat testfile | grep --color=always -z 'hello'                   #mark the word hello und show all lines with grep
-	 grep -ir string *						 #search recursively for "string" in all files in current path
-test
+	 `grep -ir string *						 #search recursively for "string" in all files in current path`
 	 
  
 
