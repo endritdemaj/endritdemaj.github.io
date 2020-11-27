@@ -149,16 +149,9 @@ sidebar_label: Linux Cheatsheat
 	openssl x509 -dates -noout -in <csr-ssl>.cer
  ### GREP 
  
- 	 grep <term> <file>                                              #search for term in file
-	 grep -i                                                         #ignore case
-	 sudo grep -r <pattern> path                                     #search for pattern in files
-	 grep -rnw '/path' -e 'pattern'                                  #    
-	 cat testfile | grep --color=always -z 'hello'                   #mark the word hello und show all lines with grep
-	 `grep -ir string *						 #search recursively for "string" in all files in current path`
-	 
- 
-
-
- 
-
- 
+ 	grep <term> <file>                                              #search for term in file
+	grep -i                                                         #ignore case
+	sudo grep -r <pattern> path                                     #search for pattern in files
+	grep -rnw '/path' -e 'pattern'                                  #    
+	cat testfile | grep --color=always -z 'hello'                   #mark the word hello und show all lines with grep
+	grep -ir string *						#search recursively for "string" in all files in current path
