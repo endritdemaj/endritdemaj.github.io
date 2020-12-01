@@ -141,3 +141,17 @@ sidebar_label: Linux Cheatsheat
 	openssl x509 -noout -modulus -in <csr-ssl>.cer | openssl md5
 	(stdin)= f57a3b98b080f6d34c6e3546badffb14
 	
+	# for webpage
+	echo | openssl s_client -servername <NAME> -connect <HOST:PORT> 2>/dev/null | openssl x509 -noout -dates
+	
+	#check date for ssl-cls cert
+	openssl x509 -enddate -noout -in <csr-ssl>.cer
+	openssl x509 -dates -noout -in <csr-ssl>.cer
+ ### GREP  
+ 	grep <term> <file>                                              #search for term in file
+	grep -i                                                         #ignore case
+	sudo grep -r <pattern> path                                     #search for pattern in files
+	grep -rnw '/path' -e 'pattern'                                  #    
+	cat testfile | grep --color=always -z 'hello'                   #mark the word hello und show all lines with grep
+	grep -ir string *						                        #search recursively for "string" in all files in current path
+## test
