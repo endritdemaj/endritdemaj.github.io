@@ -40,6 +40,4 @@ With the following command we can list systemctl Units
 There we can find Units and example start our unit after fstab
 
     After=network.target vpn-launch.service mnt-wibble.mount
-
-
-test
+    
