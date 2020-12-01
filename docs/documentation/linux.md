@@ -156,6 +156,6 @@ sidebar_label: Linux Cheatsheat
     grep -rnw '/path' -e 'pattern'                                  #    
     cat testfile | grep --color=always -z 'hello'                   #mark the word hello und show all lines with grep
     i *
+    grep -ir <pattern> *                                               #search recursively for <pattern> in all files in current path
 
-    
 ## test
