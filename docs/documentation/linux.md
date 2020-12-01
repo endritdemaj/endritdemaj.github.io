@@ -145,7 +145,10 @@ sidebar_label: Linux Cheatsheat
 	echo | openssl s_client -servername <NAME> -connect <HOST:PORT> 2>/dev/null | openssl x509 -noout -dates
 	
 	#check date for ssl-cls cert
+    #only Enddate
 	openssl x509 -enddate -noout -in <csr-ssl>.cer
+
+    #both of them
 	openssl x509 -dates -noout -in <csr-ssl>.cer
  
  ### GREP
@@ -156,6 +159,6 @@ sidebar_label: Linux Cheatsheat
     grep -rnw '/path' -e 'pattern'                                  #    
     cat testfile | grep --color=always -z 'hello'                   #mark the word hello und show all lines with grep
     i *
-    grep -ir <pattern> *                                               #search recursively for <pattern> in all files in current path
+    grep -ir <pattern> *                                            #search recursively for <pattern> in all files in current path
+    locate *.csr                                                    #locate all *.csr files using some Redhat Database    
 
-## test
