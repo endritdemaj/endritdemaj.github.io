@@ -13,6 +13,7 @@ export default {
   '5e9f5e1a': [() => import(/* webpackChunkName: '5e9f5e1a' */ "@generated/docusaurus.config"), "@generated/docusaurus.config", require.resolveWeak("@generated/docusaurus.config")],
   '60f2884b': [() => import(/* webpackChunkName: '60f2884b' */ "@site/docs/documentation/ibmtivoli.md"), "@site/docs/documentation/ibmtivoli.md", require.resolveWeak("@site/docs/documentation/ibmtivoli.md")],
   '616665f6': [() => import(/* webpackChunkName: '616665f6' */ "@site/docs/doc3.md"), "@site/docs/doc3.md", require.resolveWeak("@site/docs/doc3.md")],
+  '626c254b': [() => import(/* webpackChunkName: '626c254b' */ "@site/docs/documentation/windows.md"), "@site/docs/documentation/windows.md", require.resolveWeak("@site/docs/documentation/windows.md")],
   '6366965d': [() => import(/* webpackChunkName: '6366965d' */ "~blog/endritdemaj-github-io-blog-tags-facebook-165.json"), "~blog/endritdemaj-github-io-blog-tags-facebook-165.json", require.resolveWeak("~blog/endritdemaj-github-io-blog-tags-facebook-165.json")],
   '6875c492': [() => import(/* webpackChunkName: '6875c492' */ "@theme/BlogTagsPostsPage"), "@theme/BlogTagsPostsPage", require.resolveWeak("@theme/BlogTagsPostsPage")],
   '7463086d': [() => import(/* webpackChunkName: '7463086d' */ "@site/docs/documentation/kubernetescheatsheet.md"), "@site/docs/documentation/kubernetescheatsheet.md", require.resolveWeak("@site/docs/documentation/kubernetescheatsheet.md")],

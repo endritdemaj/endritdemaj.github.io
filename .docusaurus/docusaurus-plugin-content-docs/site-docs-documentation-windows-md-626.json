@@ -1,0 +1,20 @@
+{
+  "unversionedId": "documentation/windowscheatsheet",
+  "id": "documentation/windowscheatsheet",
+  "isDocsHomePage": false,
+  "title": "Windows Cheatsheat",
+  "description": "Windows Cheat Sheet",
+  "source": "@site/docs/documentation/windows.md",
+  "permalink": "/endritdemaj.github.io/docs/documentation/windowscheatsheet",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/documentation/windows.md",
+  "sidebar_label": "Windows Cheatsheat",
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Linux Cheatsheat",
+    "permalink": "/endritdemaj.github.io/docs/documentation/linuxcheatsheet"
+  },
+  "next": {
+    "title": "Docker Cheatsheat",
+    "permalink": "/endritdemaj.github.io/docs/documentation/dockercheatsheet"
+  }
+}

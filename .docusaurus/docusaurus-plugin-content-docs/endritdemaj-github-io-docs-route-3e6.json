@@ -35,6 +35,11 @@
           },
           {
             "type": "link",
+            "label": "Windows Cheatsheat",
+            "href": "/endritdemaj.github.io/docs/documentation/windowscheatsheet"
+          },
+          {
+            "type": "link",
             "label": "Docker Cheatsheat",
             "href": "/endritdemaj.github.io/docs/documentation/dockercheatsheet"
           },
@@ -84,6 +89,7 @@
     "/endritdemaj.github.io/docs/documentation/linuxcheatsheet": "someSidebar",
     "/endritdemaj.github.io/docs/documentation/systemdcheatsheet": "someSidebar",
     "/endritdemaj.github.io/docs/documentation/tivolicheatsheet": "someSidebar",
+    "/endritdemaj.github.io/docs/documentation/windowscheatsheet": "someSidebar",
     "/endritdemaj.github.io/docs/mdx": "someSidebar"
   },
   "version": null

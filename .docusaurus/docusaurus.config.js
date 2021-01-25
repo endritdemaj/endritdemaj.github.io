@@ -81,7 +81,7 @@ export default {
           ]
         }
       ],
-      "copyright": "Copyright © 2020 My Project, Inc. Built with Docusaurus."
+      "copyright": "Copyright © 2021 My Project, Inc. Built with Docusaurus."
     },
     "colorMode": {
       "defaultMode": "light",

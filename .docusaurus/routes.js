@@ -54,7 +54,7 @@ export default [
 },
 {
   path: '/endritdemaj.github.io/docs',
-  component: ComponentCreator('/endritdemaj.github.io/docs','53e'),
+  component: ComponentCreator('/endritdemaj.github.io/docs','d08'),
   
   routes: [
 {
@@ -100,6 +100,11 @@ export default [
 {
   path: '/endritdemaj.github.io/docs/documentation/tivolicheatsheet',
   component: ComponentCreator('/endritdemaj.github.io/docs/documentation/tivolicheatsheet','0a1'),
+  exact: true,
+},
+{
+  path: '/endritdemaj.github.io/docs/documentation/windowscheatsheet',
+  component: ComponentCreator('/endritdemaj.github.io/docs/documentation/windowscheatsheet','56a'),
   exact: true,
 },
 {
