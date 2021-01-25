@@ -9,11 +9,11 @@
       3,
       4,
       6,
-      17,
-      21,
-      25,
+      8,
+      18,
+      22,
       26,
-      35,
+      27,
       36,
       1
     ],
@@ -22,11 +22,11 @@
       1,
       3,
       4,
-      17,
-      21,
-      25,
+      8,
+      18,
+      22,
       26,
-      35,
+      27,
       36,
       2
     ],
@@ -34,9 +34,10 @@
       0,
       1,
       2,
-      17,
-      21,
-      26,
+      8,
+      18,
+      22,
+      27,
       3
     ],
     "styles": [
@@ -45,11 +46,11 @@
       3,
       4,
       6,
-      17,
-      21,
-      25,
+      8,
+      18,
+      22,
       26,
-      33,
+      27,
       34,
       35,
       36,
@@ -72,115 +73,11 @@
     "~blog/endritdemaj-github-io-blog-tags-tags-e87.json": [
       7
     ],
-    "@site/blog/2019-05-30-welcome.md": [
-      8
-    ],
-    "~docs/endritdemaj-github-io-docs-route-3e6.json": [
-      9
-    ],
-    "@site/blog/2019-05-29-hello-world.md?truncated=true": [
-      10
-    ],
-    "@site/docs/documentation/systemd.md": [
-      11
-    ],
-    "@site/docs/documentation/ansiblecheatsheet.md": [
-      12
-    ],
-    "@site/docs/documentation/dockercheatsheet.md": [
-      13
-    ],
-    "@site/docs/documentation/ibmtivoli.md": [
-      14
-    ],
-    "@site/docs/doc3.md": [
-      15
-    ],
-    "~blog/endritdemaj-github-io-blog-tags-facebook-165.json": [
-      16
-    ],
-    "@theme/BlogTagsPostsPage": [
-      0,
-      1,
-      2,
-      3,
-      17
-    ],
-    "@site/docs/documentation/kubernetescheatsheet.md": [
-      18
-    ],
-    "@site/blog/2019-05-28-hola.md?truncated=true": [
-      19
-    ],
-    "~blog/endritdemaj-github-io-blog-tags-hello-27b.json": [
-      20
-    ],
-    "@theme/BlogListPage": [
-      0,
-      1,
-      2,
-      3,
-      21
-    ],
-    "@site/blog/2019-05-30-welcome.md?truncated=true": [
-      22
-    ],
-    "@site/docs/doc1.md": [
-      23
-    ],
-    "@site/blog/2019-05-28-hola.md": [
-      24
-    ],
-    "@site/src/pages/index.js": [
-      0,
-      1,
-      2,
-      25
-    ],
-    "@theme/BlogPostPage": [
-      0,
-      1,
-      2,
-      3,
-      26
-    ],
-    "@site/docs/mdx.md": [
-      27
-    ],
-    "~blog/endritdemaj-github-io-blog-tags-docusaurus-5c8.json": [
-      28
-    ],
-    "@site/blog/2019-05-29-hello-world.md": [
-      29
-    ],
-    "@site/docs/doc2.md": [
-      30
-    ],
-    "~blog/endritdemaj-github-io-blog-tags-hola-819.json": [
-      31
-    ],
-    "~blog/endritdemaj-github-io-blog-19b.json": [
-      32
-    ],
-    "@generated/docusaurus.config": [
-      0,
-      34,
-      33
-    ],
-    "main": [
-      0,
-      34,
-      33
-    ],
-    "runtime~main": [
-      0,
-      33,
-      34
-    ],
     "@theme/DocPage": [
       0,
       1,
       2,
+      3,
       36
     ],
     "@theme/NotFound": [
@@ -188,342 +85,447 @@
       1,
       2,
       36
+    ],
+    "@site/blog/2019-05-30-welcome.md": [
+      9
+    ],
+    "~docs/endritdemaj-github-io-docs-route-3e6.json": [
+      10
+    ],
+    "@site/blog/2019-05-29-hello-world.md?truncated=true": [
+      11
+    ],
+    "@site/docs/documentation/systemd.md": [
+      12
+    ],
+    "@site/docs/documentation/ansiblecheatsheet.md": [
+      13
+    ],
+    "@site/docs/documentation/dockercheatsheet.md": [
+      14
+    ],
+    "@site/docs/documentation/ibmtivoli.md": [
+      15
+    ],
+    "@site/docs/doc3.md": [
+      16
+    ],
+    "~blog/endritdemaj-github-io-blog-tags-facebook-165.json": [
+      17
+    ],
+    "@theme/BlogTagsPostsPage": [
+      0,
+      1,
+      2,
+      3,
+      18
+    ],
+    "@site/docs/documentation/kubernetescheatsheet.md": [
+      19
+    ],
+    "@site/blog/2019-05-28-hola.md?truncated=true": [
+      20
+    ],
+    "~blog/endritdemaj-github-io-blog-tags-hello-27b.json": [
+      21
+    ],
+    "@theme/BlogListPage": [
+      0,
+      1,
+      2,
+      3,
+      22
+    ],
+    "@site/blog/2019-05-30-welcome.md?truncated=true": [
+      23
+    ],
+    "@site/docs/doc1.md": [
+      24
+    ],
+    "@site/blog/2019-05-28-hola.md": [
+      25
+    ],
+    "@site/src/pages/index.js": [
+      0,
+      1,
+      2,
+      26
+    ],
+    "@theme/BlogPostPage": [
+      0,
+      1,
+      2,
+      3,
+      27
+    ],
+    "@site/docs/mdx.md": [
+      28
+    ],
+    "~blog/endritdemaj-github-io-blog-tags-docusaurus-5c8.json": [
+      29
+    ],
+    "@site/blog/2019-05-29-hello-world.md": [
+      30
+    ],
+    "@site/docs/doc2.md": [
+      31
+    ],
+    "~blog/endritdemaj-github-io-blog-tags-hola-819.json": [
+      32
+    ],
+    "~blog/endritdemaj-github-io-blog-19b.json": [
+      33
+    ],
+    "@generated/docusaurus.config": [
+      0,
+      35,
+      34
+    ],
+    "main": [
+      0,
+      35,
+      34
+    ],
+    "runtime~main": [
+      0,
+      34,
+      35
     ]
   },
   "assets": {
     "0": {
       "css": [
         {
-          "file": "styles.148959f2.css",
-          "hash": "e0519577f9d6e9133744",
-          "publicPath": "/endritdemaj.github.io/styles.148959f2.css"
+          "file": "styles.7e5b3484.css",
+          "hash": "db5a1b7a771ecee453ba",
+          "publicPath": "/endritdemaj.github.io/styles.7e5b3484.css"
         }
       ],
       "js": [
         {
-          "file": "styles.c66cbf0a.js",
-          "hash": "e0519577f9d6e9133744",
-          "publicPath": "/endritdemaj.github.io/styles.c66cbf0a.js"
+          "file": "styles.7b70123a.js",
+          "hash": "db5a1b7a771ecee453ba",
+          "publicPath": "/endritdemaj.github.io/styles.7b70123a.js"
         }
       ]
     },
     "1": {
       "js": [
         {
-          "file": "1.42c520c2.js",
-          "hash": "94df5ba4cf4b6ed8f3f3",
-          "publicPath": "/endritdemaj.github.io/1.42c520c2.js"
+          "file": "1.12cf3eb8.js",
+          "hash": "7d9198e1fa4e2e4da302",
+          "publicPath": "/endritdemaj.github.io/1.12cf3eb8.js"
         }
       ]
     },
     "2": {
       "js": [
         {
-          "file": "2.ef933a10.js",
-          "hash": "1f1656acbb85cbd340b5",
-          "publicPath": "/endritdemaj.github.io/2.ef933a10.js"
+          "file": "2.1dbca13e.js",
+          "hash": "36676d9763d29fa29aa5",
+          "publicPath": "/endritdemaj.github.io/2.1dbca13e.js"
         }
       ]
     },
     "3": {
       "js": [
         {
-          "file": "3.f064fa59.js",
-          "hash": "a53f64bed0c804d6e14f",
-          "publicPath": "/endritdemaj.github.io/3.f064fa59.js"
+          "file": "3.6ffffe36.js",
+          "hash": "a56d720684090fdf5378",
+          "publicPath": "/endritdemaj.github.io/3.6ffffe36.js"
         }
       ]
     },
     "4": {
       "js": [
         {
-          "file": "01a85c17.27e7c1b5.js",
-          "hash": "cc0c17a001d5b4c5f2a8",
-          "publicPath": "/endritdemaj.github.io/01a85c17.27e7c1b5.js"
+          "file": "01a85c17.4e57aa0a.js",
+          "hash": "07d2314be2c5f462a7f8",
+          "publicPath": "/endritdemaj.github.io/01a85c17.4e57aa0a.js"
         }
       ]
     },
     "5": {
       "js": [
         {
-          "file": "14025716.9bbcca32.js",
-          "hash": "0e44ab44c35be1d9768c",
-          "publicPath": "/endritdemaj.github.io/14025716.9bbcca32.js"
+          "file": "14025716.7ad04c50.js",
+          "hash": "336784915ab071976990",
+          "publicPath": "/endritdemaj.github.io/14025716.7ad04c50.js"
         }
       ]
     },
     "6": {
       "js": [
         {
-          "file": "17896441.909821a8.js",
-          "hash": "737a7be50681af9f43c0",
-          "publicPath": "/endritdemaj.github.io/17896441.909821a8.js"
+          "file": "17896441.84c08260.js",
+          "hash": "6a628c346041f4facee4",
+          "publicPath": "/endritdemaj.github.io/17896441.84c08260.js"
         }
       ]
     },
     "7": {
       "js": [
         {
-          "file": "1b6d3529.503d9bb0.js",
-          "hash": "9252247d7ac7c769fa4b",
-          "publicPath": "/endritdemaj.github.io/1b6d3529.503d9bb0.js"
-        }
-      ]
-    },
-    "8": {
-      "js": [
-        {
-          "file": "2868cdab.7f7942c0.js",
-          "hash": "ec978e96c5346c23f357",
-          "publicPath": "/endritdemaj.github.io/2868cdab.7f7942c0.js"
+          "file": "1b6d3529.c00c9c9b.js",
+          "hash": "44fba7eb75992682d8ec",
+          "publicPath": "/endritdemaj.github.io/1b6d3529.c00c9c9b.js"
         }
       ]
     },
     "9": {
       "js": [
         {
-          "file": "2f6a9c0e.c8ccee62.js",
-          "hash": "8ce493252f29760ad7fc",
-          "publicPath": "/endritdemaj.github.io/2f6a9c0e.c8ccee62.js"
+          "file": "2868cdab.3dafa6ca.js",
+          "hash": "a737be7fba4bad871ceb",
+          "publicPath": "/endritdemaj.github.io/2868cdab.3dafa6ca.js"
         }
       ]
     },
     "10": {
       "js": [
         {
-          "file": "3570154c.63c96b88.js",
-          "hash": "60ea494a00a0181e30bb",
-          "publicPath": "/endritdemaj.github.io/3570154c.63c96b88.js"
+          "file": "2f6a9c0e.b1ecf0e4.js",
+          "hash": "2a9fbf0f930b415e71ec",
+          "publicPath": "/endritdemaj.github.io/2f6a9c0e.b1ecf0e4.js"
         }
       ]
     },
     "11": {
       "js": [
         {
-          "file": "487e7fa1.13d7fa97.js",
-          "hash": "a2180c49a686dc4086ea",
-          "publicPath": "/endritdemaj.github.io/487e7fa1.13d7fa97.js"
+          "file": "3570154c.849092f4.js",
+          "hash": "2d9f6a64fff7c175c3d7",
+          "publicPath": "/endritdemaj.github.io/3570154c.849092f4.js"
         }
       ]
     },
     "12": {
       "js": [
         {
-          "file": "4af78984.61b5028e.js",
-          "hash": "815d6f68cfb43fc96289",
-          "publicPath": "/endritdemaj.github.io/4af78984.61b5028e.js"
+          "file": "487e7fa1.ecbea314.js",
+          "hash": "390ef9c7b38bb51eb3f1",
+          "publicPath": "/endritdemaj.github.io/487e7fa1.ecbea314.js"
         }
       ]
     },
     "13": {
       "js": [
         {
-          "file": "50deafe8.8ce7d85e.js",
-          "hash": "485c22a5169d56fcc850",
-          "publicPath": "/endritdemaj.github.io/50deafe8.8ce7d85e.js"
+          "file": "4af78984.95363af9.js",
+          "hash": "640880773a47dca791b4",
+          "publicPath": "/endritdemaj.github.io/4af78984.95363af9.js"
         }
       ]
     },
     "14": {
       "js": [
         {
-          "file": "60f2884b.5d9ed9a8.js",
-          "hash": "a327e4dda9f198fa28d6",
-          "publicPath": "/endritdemaj.github.io/60f2884b.5d9ed9a8.js"
+          "file": "50deafe8.c9f91d4e.js",
+          "hash": "990f0d560e4997024e1b",
+          "publicPath": "/endritdemaj.github.io/50deafe8.c9f91d4e.js"
         }
       ]
     },
     "15": {
       "js": [
         {
-          "file": "616665f6.77afd8a7.js",
-          "hash": "1038ed86be5b8e32ebc2",
-          "publicPath": "/endritdemaj.github.io/616665f6.77afd8a7.js"
+          "file": "60f2884b.21d5eeb7.js",
+          "hash": "236a1cdfd276d6321485",
+          "publicPath": "/endritdemaj.github.io/60f2884b.21d5eeb7.js"
         }
       ]
     },
     "16": {
       "js": [
         {
-          "file": "6366965d.c84c8716.js",
-          "hash": "7f07e2ed72a189b5683c",
-          "publicPath": "/endritdemaj.github.io/6366965d.c84c8716.js"
+          "file": "616665f6.a4971371.js",
+          "hash": "79405fd39737f3446666",
+          "publicPath": "/endritdemaj.github.io/616665f6.a4971371.js"
         }
       ]
     },
     "17": {
       "js": [
         {
-          "file": "6875c492.ba7ca7eb.js",
-          "hash": "88396719e6eb5a0fb63b",
-          "publicPath": "/endritdemaj.github.io/6875c492.ba7ca7eb.js"
+          "file": "6366965d.6ff92d43.js",
+          "hash": "3e292f62633fd50aea4c",
+          "publicPath": "/endritdemaj.github.io/6366965d.6ff92d43.js"
         }
       ]
     },
     "18": {
       "js": [
         {
-          "file": "7463086d.9032eedd.js",
-          "hash": "c595ae0f9ca960b7d246",
-          "publicPath": "/endritdemaj.github.io/7463086d.9032eedd.js"
+          "file": "6875c492.6282c100.js",
+          "hash": "2394a468c8ef1530d7be",
+          "publicPath": "/endritdemaj.github.io/6875c492.6282c100.js"
         }
       ]
     },
     "19": {
       "js": [
         {
-          "file": "8e9f0a8a.ea5283d3.js",
-          "hash": "f356d317e2dff5a8f347",
-          "publicPath": "/endritdemaj.github.io/8e9f0a8a.ea5283d3.js"
+          "file": "7463086d.9ab1abbb.js",
+          "hash": "8693b5d4a31d8571de90",
+          "publicPath": "/endritdemaj.github.io/7463086d.9ab1abbb.js"
         }
       ]
     },
     "20": {
       "js": [
         {
-          "file": "a01504fc.84e7bb65.js",
-          "hash": "5ef607d35593e2a34057",
-          "publicPath": "/endritdemaj.github.io/a01504fc.84e7bb65.js"
+          "file": "8e9f0a8a.c6fa4bea.js",
+          "hash": "3eff38f1ed94bda9fe7b",
+          "publicPath": "/endritdemaj.github.io/8e9f0a8a.c6fa4bea.js"
         }
       ]
     },
     "21": {
       "js": [
         {
-          "file": "a6aa9e1f.ff7e783f.js",
-          "hash": "dfa3cbe831356a491567",
-          "publicPath": "/endritdemaj.github.io/a6aa9e1f.ff7e783f.js"
+          "file": "a01504fc.136c9ede.js",
+          "hash": "7ce263d8ffcfec4fa811",
+          "publicPath": "/endritdemaj.github.io/a01504fc.136c9ede.js"
         }
       ]
     },
     "22": {
       "js": [
         {
-          "file": "af172acd.3862075c.js",
-          "hash": "36a2a8323dfedc0b2591",
-          "publicPath": "/endritdemaj.github.io/af172acd.3862075c.js"
+          "file": "a6aa9e1f.d30fb0c0.js",
+          "hash": "191e2ff6159d8fbd10ca",
+          "publicPath": "/endritdemaj.github.io/a6aa9e1f.d30fb0c0.js"
         }
       ]
     },
     "23": {
       "js": [
         {
-          "file": "b2f90839.60bf9fe8.js",
-          "hash": "ea9b139debbd3718a453",
-          "publicPath": "/endritdemaj.github.io/b2f90839.60bf9fe8.js"
+          "file": "af172acd.98c10bec.js",
+          "hash": "ebf8a2fd16710f080d21",
+          "publicPath": "/endritdemaj.github.io/af172acd.98c10bec.js"
         }
       ]
     },
     "24": {
       "js": [
         {
-          "file": "bdd709f1.45a217f5.js",
-          "hash": "fea0efeb2b74826ad4e0",
-          "publicPath": "/endritdemaj.github.io/bdd709f1.45a217f5.js"
+          "file": "b2f90839.18909665.js",
+          "hash": "24d00af4c4fde90d9754",
+          "publicPath": "/endritdemaj.github.io/b2f90839.18909665.js"
         }
       ]
     },
     "25": {
       "js": [
         {
-          "file": "c4f5d8e4.a7cebec4.js",
-          "hash": "6eb3e278b00a8f430ab8",
-          "publicPath": "/endritdemaj.github.io/c4f5d8e4.a7cebec4.js"
+          "file": "bdd709f1.5a83bdfe.js",
+          "hash": "e04a08b7355abb61939f",
+          "publicPath": "/endritdemaj.github.io/bdd709f1.5a83bdfe.js"
         }
       ]
     },
     "26": {
       "js": [
         {
-          "file": "ccc49370.8c68d505.js",
-          "hash": "53dc69e989b9b6f74dfe",
-          "publicPath": "/endritdemaj.github.io/ccc49370.8c68d505.js"
+          "file": "c4f5d8e4.c385c3bd.js",
+          "hash": "de2b9d695307b1cd2054",
+          "publicPath": "/endritdemaj.github.io/c4f5d8e4.c385c3bd.js"
         }
       ]
     },
     "27": {
       "js": [
         {
-          "file": "ce3e42ad.88430255.js",
-          "hash": "316dfa66ec319a14f87a",
-          "publicPath": "/endritdemaj.github.io/ce3e42ad.88430255.js"
+          "file": "ccc49370.1aef5ba0.js",
+          "hash": "f4f1ff95fbee4cdbc1b9",
+          "publicPath": "/endritdemaj.github.io/ccc49370.1aef5ba0.js"
         }
       ]
     },
     "28": {
       "js": [
         {
-          "file": "d3807d1c.57f22bc5.js",
-          "hash": "ae5679e22b545a8be81c",
-          "publicPath": "/endritdemaj.github.io/d3807d1c.57f22bc5.js"
+          "file": "ce3e42ad.d14cb382.js",
+          "hash": "b45128f4337c7b9dacf6",
+          "publicPath": "/endritdemaj.github.io/ce3e42ad.d14cb382.js"
         }
       ]
     },
     "29": {
       "js": [
         {
-          "file": "d610846f.31897c07.js",
-          "hash": "2e9b1d3c83bee1200e0f",
-          "publicPath": "/endritdemaj.github.io/d610846f.31897c07.js"
+          "file": "d3807d1c.620e54a4.js",
+          "hash": "d1e7b5eb5dc7062dceb1",
+          "publicPath": "/endritdemaj.github.io/d3807d1c.620e54a4.js"
         }
       ]
     },
     "30": {
       "js": [
         {
-          "file": "df361e2b.feca90b1.js",
-          "hash": "ff256bcfafe637ee0734",
-          "publicPath": "/endritdemaj.github.io/df361e2b.feca90b1.js"
+          "file": "d610846f.44690245.js",
+          "hash": "70ac4834921d83812d7c",
+          "publicPath": "/endritdemaj.github.io/d610846f.44690245.js"
         }
       ]
     },
     "31": {
       "js": [
         {
-          "file": "f57af8f8.b8797da9.js",
-          "hash": "ea62907152665ec35da7",
-          "publicPath": "/endritdemaj.github.io/f57af8f8.b8797da9.js"
+          "file": "df361e2b.170f1a7b.js",
+          "hash": "17a7c24735eda99aafda",
+          "publicPath": "/endritdemaj.github.io/df361e2b.170f1a7b.js"
         }
       ]
     },
     "32": {
       "js": [
         {
-          "file": "fae087be.85463d31.js",
-          "hash": "d7134ad5f30fbf579e3b",
-          "publicPath": "/endritdemaj.github.io/fae087be.85463d31.js"
+          "file": "f57af8f8.67a812b5.js",
+          "hash": "d6a3cffd20ed6bcefd19",
+          "publicPath": "/endritdemaj.github.io/f57af8f8.67a812b5.js"
         }
       ]
     },
     "33": {
       "js": [
         {
-          "file": "main.3233e2c4.js",
-          "hash": "73cc22f77eaefd16b108",
-          "publicPath": "/endritdemaj.github.io/main.3233e2c4.js"
+          "file": "fae087be.38d0e9a9.js",
+          "hash": "68e96e8fba276f0704d8",
+          "publicPath": "/endritdemaj.github.io/fae087be.38d0e9a9.js"
         }
       ]
     },
     "34": {
       "js": [
         {
-          "file": "runtime~main.6dca8734.js",
-          "hash": "684b5895818ee44db872",
-          "publicPath": "/endritdemaj.github.io/runtime~main.6dca8734.js"
+          "file": "main.843188b6.js",
+          "hash": "5c3652a7ab9fee4f5246",
+          "publicPath": "/endritdemaj.github.io/main.843188b6.js"
+        }
+      ]
+    },
+    "35": {
+      "js": [
+        {
+          "file": "runtime~main.be1b37c3.js",
+          "hash": "8293c1c555df727b5fe1",
+          "publicPath": "/endritdemaj.github.io/runtime~main.be1b37c3.js"
         }
       ]
     },
     "36": {
       "js": [
         {
-          "file": "35.5ffbb79d.js",
-          "hash": "0a87e0e31ff7cae7b5e3",
-          "publicPath": "/endritdemaj.github.io/35.5ffbb79d.js"
+          "file": "1be78505.58f9abc1.js",
+          "hash": "23216f07d0635ffa5286",
+          "publicPath": "/endritdemaj.github.io/1be78505.58f9abc1.js"
         },
         {
-          "file": "36.aa6a38fa.js",
-          "hash": "869cd9f8738d14d02acd",
-          "publicPath": "/endritdemaj.github.io/36.aa6a38fa.js"
+          "file": "36.db0e809a.js",
+          "hash": "3fafb1524ed2e8ef4b5d",
+          "publicPath": "/endritdemaj.github.io/36.db0e809a.js"
         }
       ]
     }
