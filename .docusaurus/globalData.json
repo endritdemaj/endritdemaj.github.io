@@ -30,6 +30,10 @@
               "path": "/endritdemaj.github.io/docs/documentation/dockercheatsheet"
             },
             {
+              "id": "documentation/ibmdatastage",
+              "path": "/endritdemaj.github.io/docs/documentation/ibmdatastage"
+            },
+            {
               "id": "documentation/kubernetescheatsheet",
               "path": "/endritdemaj.github.io/docs/documentation/kubernetescheatsheet"
             },

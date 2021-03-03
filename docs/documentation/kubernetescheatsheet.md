@@ -94,6 +94,7 @@ Check pods
             --all-containers=true                       # to see logs for all containers
 
     kubectl describe pod/my-apache-65fd7bd7db-gn7qg     # describe pod and see events
+    kubectl logs <podname> -n <deployment-name> --timestamps -f
 
 * Learning Services Types
 * Creating Services Types

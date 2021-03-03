@@ -11,6 +11,7 @@ export default {
   '4af78984': [() => import(/* webpackChunkName: '4af78984' */ "@site/docs/documentation/ansiblecheatsheet.md"), "@site/docs/documentation/ansiblecheatsheet.md", require.resolveWeak("@site/docs/documentation/ansiblecheatsheet.md")],
   '50deafe8': [() => import(/* webpackChunkName: '50deafe8' */ "@site/docs/documentation/dockercheatsheet.md"), "@site/docs/documentation/dockercheatsheet.md", require.resolveWeak("@site/docs/documentation/dockercheatsheet.md")],
   '5e9f5e1a': [() => import(/* webpackChunkName: '5e9f5e1a' */ "@generated/docusaurus.config"), "@generated/docusaurus.config", require.resolveWeak("@generated/docusaurus.config")],
+  '60bb5fb9': [() => import(/* webpackChunkName: '60bb5fb9' */ "@site/docs/documentation/ibmdatastage.md"), "@site/docs/documentation/ibmdatastage.md", require.resolveWeak("@site/docs/documentation/ibmdatastage.md")],
   '60f2884b': [() => import(/* webpackChunkName: '60f2884b' */ "@site/docs/documentation/ibmtivoli.md"), "@site/docs/documentation/ibmtivoli.md", require.resolveWeak("@site/docs/documentation/ibmtivoli.md")],
   '616665f6': [() => import(/* webpackChunkName: '616665f6' */ "@site/docs/doc3.md"), "@site/docs/doc3.md", require.resolveWeak("@site/docs/doc3.md")],
   '626c254b': [() => import(/* webpackChunkName: '626c254b' */ "@site/docs/documentation/windows.md"), "@site/docs/documentation/windows.md", require.resolveWeak("@site/docs/documentation/windows.md")],

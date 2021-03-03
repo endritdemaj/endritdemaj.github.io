@@ -1,0 +1,20 @@
+{
+  "unversionedId": "documentation/ibmdatastage",
+  "id": "documentation/ibmdatastage",
+  "isDocsHomePage": false,
+  "title": "IBM Datastage Cheatsheat",
+  "description": "IBM Datastage Cheatsheat",
+  "source": "@site/docs/documentation/ibmdatastage.md",
+  "permalink": "/endritdemaj.github.io/docs/documentation/ibmdatastage",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/documentation/ibmdatastage.md",
+  "sidebar_label": "IBM Datastage Cheatsheat",
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Ansible Cheatsheat",
+    "permalink": "/endritdemaj.github.io/docs/documentation/ansiblecheatsheet"
+  },
+  "next": {
+    "title": "Powered by MDX",
+    "permalink": "/endritdemaj.github.io/docs/mdx"
+  }
+}

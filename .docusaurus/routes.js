@@ -54,7 +54,7 @@ export default [
 },
 {
   path: '/endritdemaj.github.io/docs',
-  component: ComponentCreator('/endritdemaj.github.io/docs','d08'),
+  component: ComponentCreator('/endritdemaj.github.io/docs','c17'),
   
   routes: [
 {
@@ -80,6 +80,11 @@ export default [
 {
   path: '/endritdemaj.github.io/docs/documentation/dockercheatsheet',
   component: ComponentCreator('/endritdemaj.github.io/docs/documentation/dockercheatsheet','c40'),
+  exact: true,
+},
+{
+  path: '/endritdemaj.github.io/docs/documentation/ibmdatastage',
+  component: ComponentCreator('/endritdemaj.github.io/docs/documentation/ibmdatastage','a6d'),
   exact: true,
 },
 {

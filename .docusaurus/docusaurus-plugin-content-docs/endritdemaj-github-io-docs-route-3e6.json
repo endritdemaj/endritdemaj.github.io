@@ -62,6 +62,11 @@
             "type": "link",
             "label": "Ansible Cheatsheat",
             "href": "/endritdemaj.github.io/docs/documentation/ansiblecheatsheet"
+          },
+          {
+            "type": "link",
+            "label": "IBM Datastage Cheatsheat",
+            "href": "/endritdemaj.github.io/docs/documentation/ibmdatastage"
           }
         ]
       },
@@ -85,6 +90,7 @@
     "/endritdemaj.github.io/docs/doc3": "someSidebar",
     "/endritdemaj.github.io/docs/documentation/ansiblecheatsheet": "someSidebar",
     "/endritdemaj.github.io/docs/documentation/dockercheatsheet": "someSidebar",
+    "/endritdemaj.github.io/docs/documentation/ibmdatastage": "someSidebar",
     "/endritdemaj.github.io/docs/documentation/kubernetescheatsheet": "someSidebar",
     "/endritdemaj.github.io/docs/documentation/linuxcheatsheet": "someSidebar",
     "/endritdemaj.github.io/docs/documentation/systemdcheatsheet": "someSidebar",
