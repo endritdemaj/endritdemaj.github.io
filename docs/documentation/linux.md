@@ -144,6 +144,12 @@ sidebar_label: Linux Cheatsheat
 	# for webpage
 	echo | openssl s_client -servername <NAME> -connect <HOST:PORT> 2>/dev/null | openssl x509 -noout -dates
 	
+	#check if you can create a secure connection to a service. Looj for the return code
+	openssl s_client -connect foo.whatever.com:443 -CApath /etc/ssl/certs
+	
+	#ca-bundle needs to be in this folgder
+	/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem nach  nach /usr/local/share/ca-certificates/ca-bundle.crt
+	
 	#check date for ssl-cls cert
     #only Enddate
 	openssl x509 -enddate -noout -in <csr-ssl>.cer
